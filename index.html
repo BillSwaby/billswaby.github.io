@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,20 +100,12 @@ p {
     margin-bottom: 25px;
 }
 
-.listen-button {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: transparent;
-    color: #d5b76a;
-    border: 1px solid #9d8245;
-    font-family: Georgia, "Times New Roman", serif;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
+/* MUSIC PLAYER */
 
-.listen-button:hover {
-    background: #9d8245;
-    color: #050505;
+audio {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
 }
 
 footer {
@@ -142,6 +135,7 @@ footer {
 
 </header>
 
+
 <main>
 
 <section>
@@ -165,6 +159,8 @@ footer {
 
     <h2>The EP</h2>
 
+
+    <!-- SONG 01 -->
 
     <div class="song">
 
@@ -202,12 +198,17 @@ footer {
             You held every broken piece until I learned how to shine again.
         </p>
 
-       <a class="listen-button" href="./Black%20Lace%20Angel%20%281%29.mp3" target="_blank">
-    LISTEN
-</a>
+        <audio controls preload="metadata">
+            <source
+                src="/Black%20Lace%20Angel%20%281%29.mp3"
+                type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
 
     </div>
 
+
+    <!-- SONG 02 -->
 
     <div class="song">
 
@@ -234,12 +235,17 @@ footer {
             seduction to a plea for real love and acceptance.
         </p>
 
-        <a class="listen-button" href="./Beneath%20the%20Black%20Lace%20%281%29.mp3" target="_blank">
-    LISTEN
-</a>
+        <audio controls preload="metadata">
+            <source
+                src="/Beneath%20the%20Black%20Lace%20%281%29.mp3"
+                type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
 
     </div>
 
+
+    <!-- SONG 03 -->
 
     <div class="song">
 
@@ -266,12 +272,17 @@ footer {
             still honoring her darker past.
         </p>
 
-     <audio controls style="width: 100%; max-width: 600px; margin-top: 20px;">
-    <source src="https://github.com/BillSwaby/billswaby.github.io/raw/refs/heads/main/woman-who-stayed.mp3.mp3" type="audio/mpeg">
-    Your browser does not support the audio player.
-</audio>
+        <audio controls preload="metadata">
+            <source
+                src="/Black%20Lace%20Angel%20%E2%80%93%20Part%20III%20%28Lace%20%26%20Dawn%29%20%281%29.mp3"
+                type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
+
     </div>
 
+
+    <!-- SONG 04 -->
 
     <div class="song">
 
@@ -299,12 +310,17 @@ footer {
             real love helps someone become whole.
         </p>
 
-        <a class="listen-button" href="https://github.com/BillSwaby/billswaby.github.io/raw/refs/heads/main/Black%20Lace%20Angel%20%E2%80%93%20Part%20IV_%20The%20Woman%20Who%20Stayed%20(1).mp3" target="_blank">
-    LISTEN
-</a>
+        <audio controls preload="metadata">
+            <source
+                src="/Black%20Lace%20Angel%20%E2%80%93%20Part%20IV_%20The%20Woman%20Who%20Stayed%20%281%29.mp3"
+                type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
 
     </div>
 
+
+    <!-- SONG 05 -->
 
     <div class="song">
 
@@ -331,9 +347,9 @@ footer {
             of lasting love and peace.
         </p>
 
-        <button class="listen-button">
-            LISTEN
-        </button>
+        <p>
+            <em>Music coming soon.</em>
+        </p>
 
     </div>
 
@@ -368,3 +384,4 @@ footer {
 
 </body>
 </html>
+```
