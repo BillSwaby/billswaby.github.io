@@ -3,78 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Black Lace Angel — Bill Swaby</title>
 
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background: #080808;
+    background: #050505;
     color: #e8d8b0;
     font-family: Georgia, "Times New Roman", serif;
     text-align: center;
 }
 
-header {
-    padding: 70px 20px;
-    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.9));
-    border-bottom: 1px solid #9d8245;
+.hero {
+    padding: 50px 20px 40px;
+    background:
+        radial-gradient(circle at center, #24201a 0%, #090909 55%, #000000 100%);
+}
+
+.cover {
+    width: min(90vw, 520px);
+    height: auto;
+    display: block;
+    margin: 0 auto 40px;
+    box-shadow:
+        0 0 30px rgba(210,180,100,.25),
+        0 20px 60px rgba(0,0,0,.8);
 }
 
 h1 {
-    font-size: 54px;
-    margin: 0;
-    letter-spacing: 4px;
+    font-size: clamp(36px, 7vw, 64px);
+    letter-spacing: 5px;
+    margin: 10px 0;
 }
 
 .subtitle {
-    margin-top: 15px;
     font-size: 20px;
     font-style: italic;
+    color: #c9a85c;
 }
 
 main {
     max-width: 900px;
     margin: auto;
-    padding: 50px 25px;
+    padding: 45px 25px;
+}
+
+section {
+    padding: 35px 0;
+    border-bottom: 1px solid #594a2d;
 }
 
 h2 {
     color: #c9a85c;
     font-size: 32px;
-    margin-top: 40px;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ddd0b5;
 }
 
 .tracklist {
     list-style: none;
     padding: 0;
-    line-height: 2;
-    font-size: 18px;
+    line-height: 2.2;
+    font-size: 19px;
+}
+
+.tracklist li {
+    border-bottom: 1px solid #28231a;
+    padding: 5px;
 }
 
 footer {
-    margin-top: 50px;
-    padding: 30px;
-    border-top: 1px solid #9d8245;
+    padding: 35px 20px;
+    color: #888;
     font-size: 14px;
-    color: #aaa;
 }
 
-a {
-    color: #d5b76a;
-}
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="hero">
+
+    <img
+        class="cover"
+        src="ChatGPT%20Image%20Aug%208,%202026,%2010_41_48%20AM.png"
+        alt="Black Lace Angel — Bill Swaby"
+    >
+
     <h1>BLACK LACE ANGEL</h1>
+
     <div class="subtitle">
         The EP by Bill Swaby
     </div>
+
 </header>
 
 <main>
+
+<section>
 
     <h2>A Story. Three Hearts. One Love That Lasts Forever.</h2>
 
@@ -88,15 +126,25 @@ a {
         devotion and the bond that refuses to disappear.
     </p>
 
+</section>
+
+<section>
+
     <h2>The EP</h2>
 
     <ul class="tracklist">
+
         <li>1. Black Lace Angel</li>
         <li>2. Beneath the Black Lace</li>
         <li>3. Lace &amp; Dawn</li>
         <li>4. The Woman Who Stayed</li>
         <li>5. Forever, Together</li>
+
     </ul>
+
+</section>
+
+<section>
 
     <h2>The Story</h2>
 
@@ -107,14 +155,18 @@ a {
     </p>
 
     <p>
-        This website will eventually contain the music,
-        lyrics, artwork, story behind the songs and more.
+        This website will contain the music, lyrics,
+        artwork, story behind the songs and more.
     </p>
+
+</section>
 
 </main>
 
 <footer>
+
     © 2026 Bill Swaby — Black Lace Angel
+
 </footer>
 
 </body>
