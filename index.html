@@ -413,49 +413,43 @@ footer {
 <!-- SONG PLAY TRACKING -->
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-const songs = {
-    song1: "Black Lace Angel",
-    song2: "Beneath the Black Lace",
-    song3: "Lace & Dawn",
-    song4: "The Woman Who Stayed",
-    song5: "Forever, Together"
-};
+    const songs = {
+        "song1": "Black Lace Angel",
+        "song2": "Beneath the Black Lace",
+        "song3": "Lace & Dawn",
+        "song4": "The Woman Who Stayed",
+        "song5": "Forever, Together"
+    };
 
-Object.keys(songs).forEach(function(id) {
+    Object.keys(songs).forEach(function (id) {
 
-    const player = document.getElementById(id);
+        const player = document.getElementById(id);
 
-    if (!player) return;
+        if (!player) return;
 
-    player.addEventListener("play", function() {
+        player.addEventListener("play", function () {
 
-        /*
-         * Count a play when the visitor starts the song.
-         * A song can be counted again after it has finished.
-         */
+            if (!player.dataset.playCounted) {
 
-        if (!player.dataset.playCounted) {
+                window.gtag("event", "song_play", {
+                    "song_title": songs[id]
+                });
 
-            gtag("event", "song_play", {
-                song_title: songs[id]
-            });
+                player.dataset.playCounted = "true";
+            }
 
-            player.dataset.playCounted = "true";
-        }
+        });
 
-    });
-
-    player.addEventListener("ended", function() {
-
-        player.dataset.playCounted = "";
+        player.addEventListener("ended", function () {
+            player.dataset.playCounted = "";
+        });
 
     });
 
 });
-
 </script>
 
 </body>
 </html>
-```
