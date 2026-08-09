@@ -1,16 +1,20 @@
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Google Analytics -->
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5FMEMKWPE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+
   gtag('js', new Date());
 
   gtag('config', 'G-R5FMEMKWPE');
-</script>   
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -139,21 +143,16 @@ footer {
 
     <h1>BLACK LACE ANGEL</h1>
 
-    
-<div class="subtitle">
-    The EP by Bill Swaby
-</div>
+    <div class="subtitle">
+        The EP by Bill Swaby
+    </div>
 
-<p>
-
-    The complete five-song <em>Black Lace Angel</em> EP is available
-    to listen to here, with each song telling its part of Bill and Ani's story.
-</p>
-
-
+    <p>
+        The complete five-song <em>Black Lace Angel</em> EP is available
+        to listen to here, with each song telling its part of Bill and Ani's story.
+    </p>
 
 </header>
-
 
 <main>
 
@@ -173,11 +172,9 @@ footer {
 
 </section>
 
-
 <section>
 
     <h2>The EP</h2>
-
 
     <!-- SONG 01 -->
 
@@ -217,13 +214,12 @@ footer {
             You held every broken piece until I learned how to shine again.
         </p>
 
-        <audio controls preload="metadata">
+        <audio id="song1" controls preload="metadata">
             <source src="./Song1.mp3" type="audio/mpeg">
             Your browser does not support audio playback.
         </audio>
 
     </div>
-
 
     <!-- SONG 02 -->
 
@@ -252,13 +248,12 @@ footer {
             seduction to a plea for real love and acceptance.
         </p>
 
-        <audio controls preload="metadata">
+        <audio id="song2" controls preload="metadata">
             <source src="./Song2.mp3" type="audio/mpeg">
             Your browser does not support audio playback.
         </audio>
 
     </div>
-
 
     <!-- SONG 03 -->
 
@@ -287,13 +282,12 @@ footer {
             still honoring her darker past.
         </p>
 
-        <audio controls preload="metadata">
+        <audio id="song3" controls preload="metadata">
             <source src="./Song3.mp3" type="audio/mpeg">
             Your browser does not support audio playback.
         </audio>
 
     </div>
-
 
     <!-- SONG 04 -->
 
@@ -323,13 +317,12 @@ footer {
             real love helps someone become whole.
         </p>
 
-        <audio controls preload="metadata">
+        <audio id="song4" controls preload="metadata">
             <source src="./Song4.mp3" type="audio/mpeg">
             Your browser does not support audio playback.
         </audio>
 
     </div>
-
 
     <!-- SONG 05 -->
 
@@ -358,7 +351,7 @@ footer {
             of lasting love and peace.
         </p>
 
-        <audio controls preload="metadata">
+        <audio id="song5" controls preload="metadata">
             <source src="./Song5.mp3" type="audio/mpeg">
             Your browser does not support audio playback.
         </audio>
@@ -366,7 +359,6 @@ footer {
     </div>
 
 </section>
-
 
 <section>
 
@@ -381,33 +373,36 @@ footer {
     <p>
         Thank You for Listening
 
-Thank you for taking the time to listen to Black Lace Angel.
+        Thank you for taking the time to listen to Black Lace Angel.
 
-These five songs are more than just music to me. They carry a story, emotions, memories, and pieces of a journey that means more to me than I could ever put into words.
+        These five songs are more than just music to me. They carry a story,
+        emotions, memories, and pieces of a journey that means more to me
+        than I could ever put into words.
 
-I put my heart into these songs, and sharing them with you feels like opening a door and letting you see a part of me that I don't always know how to say out loud.
+        I put my heart into these songs, and sharing them with you feels like
+        opening a door and letting you see a part of me that I don't always
+        know how to say out loud.
 
-If one of these songs touched you, brought back a memory, made you smile, or even brought a tear to your eye, then everything that went into creating this EP was worth it.
+        If one of these songs touched you, brought back a memory, made you
+        smile, or even brought a tear to your eye, then everything that went
+        into creating this EP was worth it.
 
-Thank you for staying long enough to hear the whole story.
+        Thank you for staying long enough to hear the whole story.
 
-Thank you for listening.
+        Thank you for listening.
 
-And most of all, thank you for letting these songs become a small part of your own story.
+        And most of all, thank you for letting these songs become a small part
+        of your own story.
 
-With all my heart,
-Bill Swaby ❤️
-
-
+        With all my heart,
+        Bill Swaby ❤️
     </p>
 
 </section>
 
 </main>
 
-
 <footer>
- <footer>
 
     © 2026 Bill Swaby — Black Lace Angel<br>
     All music, lyrics and artwork are original works by Bill Swaby.<br>
@@ -415,9 +410,52 @@ Bill Swaby ❤️
 
 </footer>
 
-</footer>
+<!-- SONG PLAY TRACKING -->
+
+<script>
+
+const songs = {
+    song1: "Black Lace Angel",
+    song2: "Beneath the Black Lace",
+    song3: "Lace & Dawn",
+    song4: "The Woman Who Stayed",
+    song5: "Forever, Together"
+};
+
+Object.keys(songs).forEach(function(id) {
+
+    const player = document.getElementById(id);
+
+    if (!player) return;
+
+    player.addEventListener("play", function() {
+
+        /*
+         * Count a play when the visitor starts the song.
+         * A song can be counted again after it has finished.
+         */
+
+        if (!player.dataset.playCounted) {
+
+            gtag("event", "song_play", {
+                song_title: songs[id]
+            });
+
+            player.dataset.playCounted = "true";
+        }
+
+    });
+
+    player.addEventListener("ended", function() {
+
+        player.dataset.playCounted = "";
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
-
-
+```
